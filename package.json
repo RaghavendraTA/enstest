@@ -1,7 +1,7 @@
 {
-  "name": "Educart",
+  "name": "ENS",
   "version": "1.0.0",
-  "description": "Student E-Cart",
+  "description": "Educational Networking Site",
   "main": "server.js",
   "dependencies": {
     "body-parser": "^1.15.2",

@@ -11,7 +11,6 @@ setInterval(function() {
     var obj = {
         "key": str
     };
-    console.log(str);
     jsonfile.writeFile("./token.json", obj, function(err) {
         if (err) console.error(err);
     });
@@ -26,7 +25,7 @@ var data = {
     "domain": "http://ens.herokuapp.com:8080",
     "database": "mongodb://raghu:raghu123@ds011913.mlab.com:11913/mcc",
     //"database": "mongodb://localhost:27017/ens",
-    "server_port": 8080,
+    "server_port": process.env.PORT || 8080,
     "server_ip_address": "127.0.0.1",
     "getToken": getToken
 };
