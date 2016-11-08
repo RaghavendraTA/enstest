@@ -50,7 +50,7 @@ app.get('*', function (req, res) {
 });
 
 //Establishing Server at Configured IP and Port
-http.listen(config.server_port, config.server_ip_address, function (err) {
+http.listen(config.server_port, function (err) {
     if (err) {
         console.log(err);
         process.exit(1);
