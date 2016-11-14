@@ -40,6 +40,21 @@ module.exports = function(app, express, io) {
         res.end("Signup code can be implemented here");
     });
 
+    //Validate the given token
+    api.use('/validate', function(req, res, next) {
+
+        var token = req.body.token;
+
+        //Creating input json for varification
+        var input = {
+            userId: req.body.userId,
+            name: req.body.name
+        };
+
+        //Comparing the token synchronously
+        edc.compareToken(input, token, res, next, true);
+    });
+
     //Authentication check
     api.use('/:userId', function(req, res, next) {
 

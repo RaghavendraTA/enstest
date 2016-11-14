@@ -21,10 +21,10 @@ function getToken() {
 }
 
 var data = {
-    //"domain": "http://127.0.0.1:8080",
-    "domain": "http://ens.herokuapp.com:8080",
-    "database": "mongodb://raghu:raghu123@ds011913.mlab.com:11913/mcc",
-    //"database": "mongodb://localhost:27017/ens",
+    "domain": "http://127.0.0.1:8080",
+    //"domain": "http://ens.herokuapp.com:8080",
+    //"database": "mongodb://raghu:raghu123@ds011913.mlab.com:11913/mcc",
+    "database": "mongodb://localhost:27017/ens",
     "server_port": process.env.PORT || 8080,
     "server_ip_address": "127.0.0.1",
     "getToken": getToken
