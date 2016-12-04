@@ -38,7 +38,7 @@ function createArticle(_id, h4, imgPath) {
 
     var image = document.createElement("IMG");
     image.src = imgPath;
-    image.style.width = "250px";
+    image.style.width = "270px";
     image.style.height = "200px";
 
     hyper.appendChild(image);
