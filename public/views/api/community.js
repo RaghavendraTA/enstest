@@ -67,11 +67,11 @@ function createArticle(_id, h4, imgPath, ansCount) {
     x.onclick = function () {
         doit(_id);
     };
-    x.style.height = "200px";
+    //x.style.height = "200px";
 
     var img = document.createElement("IMG");
     img.src = imgPath;
-    //img.style.height = "100%";
+    //img.style.height = "300px";
 
     var A = document.createElement("A");
     A.className = "image";
