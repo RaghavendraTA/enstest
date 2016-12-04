@@ -78,7 +78,7 @@ function doit(id) {
 
     if (data.headerImage.match('youtube')) {
         var frame = document.createElement('iframe');
-        frame.src = "http://www.youtube.com/embed/" + process(data.headerImage);
+        frame.src = "https://www.youtube.com/embed/" + process(data.headerImage);
         frame.style.width = "560px";
         frame.style.height = "315px";
         frame.setAttribute('allowFullScreen', '');
