@@ -1,10 +1,10 @@
 //Basic Node Modules to Run the Proper server.
 var express = require('express');
 var bodyParser = require('body-parser');
-var morgan = require('morgan');
 var config = require('./config');
 var mongoose = require('mongoose');
 var path = require('path');
+var morgan = require('morgan');
 
 //Creating express object
 var app = express();
@@ -19,13 +19,11 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 
-//Logging the Request to the Console
-app.use(morgan('dev'));
-
 //Static Directory for WebPages
 app.use(express.static(path.join(__dirname, './public/views/')));
 
 //connecting to my mongo database, config is a module from config.js file
+mongoose.Promise = global.Promise;
 mongoose.connect(config.database, function (err, db) {
     if (err) {
         console.log(err);
@@ -34,10 +32,6 @@ mongoose.connect(config.database, function (err, db) {
         console.log('Mongoose Connected to : ' + config.database);
     }
 });
-
-//Creating user express router
-var uapi = require('./app/routes/uapi')(app, express, io);
-app.use('/uapi', uapi);
 
 //Making socket.io to listen at http port (means 3000) and Routing to a File
 var io = require('socket.io').listen(http);
@@ -48,6 +42,8 @@ require("./app/routes/uio.js")(io);
 app.get('*', function (req, res) {
     res.status(404).end("404 Error");
 });
+
+process.env.DEBUG = "* node server.js";
 
 //Establishing Server at Configured IP and Port
 http.listen(config.server_port, function (err) {

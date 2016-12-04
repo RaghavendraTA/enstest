@@ -1,0 +1,135 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+    <title>Read Only by HTML5 UP</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+    <link rel="stylesheet" href="editorsrc/easyeditor.css">
+    <style>
+        #one:before {
+            background-image: url(images/type.jpg);
+            background-position: top right;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <section id="header">
+        <header>
+            <span class="image avatar"><img src="images/avatar.jpg" alt="" id="avatar"/></span>
+            <h1 id="logo"><a href="#" id="username">Raghavendra Temkar</a></h1>
+            <p id="status">A Man With Potential</p>
+        </header>
+        <nav id="nav">
+            <ul>
+                <li><a href="./home.html">Home</a></li>
+                <li><a href="./profile.html">Profile</a></li>
+                <li><a href="./community.html">Community</a></li>
+                <li><a href="#" class="active">Share</a></li>
+                <li><a href="javascript:void()" class="icon fa-lock" id="logout">  Logout</a></li>
+            </ul>
+        </nav>
+        <footer>
+            <ul class="icons">
+                <li id="twitterL"><a href="#" class="icon fa-twitter" id="twitter"><span class="label">Twitter</span></a></li>
+                <li id="facebookL"><a href="#" class="icon fa-facebook" id="facebook"><span class="label">Facebook</span></a></li>
+                <li id="LinkedInL"><a href="#" class="icon fa-linkedin" id="LinkedIn"><span class="label">LinkedIn</span></a></li>
+                <li id="EditorL"><a href="#" class="icon fa-edit" id="Editor"><span class="label">Blog</span></a></li>
+            </ul>
+        </footer>
+    </section>
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Main -->
+        <div id="main">
+
+            <!-- One -->
+            <section id="one">
+            </section>
+
+            <!-- Three -->
+            <section id="three">
+                <center>
+                    <h1 style="padding: 2%">You Done something ? Tell to the World !</h1>
+                    <div class="row">
+                        <div class="8u" style="margin-left: 8px;">
+                            <input type="text" placeholder="Content Header : Insert a Url" style="width:95%; margin-top: 1%; margin-bottom: 1%" id="imgYurl"/>
+                        </div>
+                        <div class="2u" style="padding-left: 0; margin-top: 10px; margin-left: -8px;">
+                            <input type="radio" id="Image" name="demo-priority" style="padding:0" checked>
+                            <label for="Image">Image</label>
+                        </div>
+                        <div class="2u" style="padding: 0; margin-top: 10px; margin-left: -8px;">
+                            <input type="radio" id="youtube" name="demo-priority" style="padding:0">
+                            <label for="youtube">Youtube</label>
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="row">
+                        <div class="12u">
+                            <input type="text" placeholder="Content Header" style="width:95%; margin-top: 1%; margin-bottom: 1%" id="headerTitle"/>
+                        </div>
+                    </div>
+                    <br/>
+                    <div style="width:95%">
+                        <div id="editor" style="height:300px; border:1px solid black" />
+                    </div>
+                    <input type="submit" class="special" value="Publish Now!" style="height:60px; margin-bottom: 2%" id="publish_content"/>
+                </center>
+            </section>
+
+            <!-- Footer -->
+            <section id="footer">
+                <ul class="copyright" style="margin-left:10%;">
+                    <li>&copy; Untitled. All rights reserved.</li>
+                    <li>Design: <a href="http://html5up.net">Raghavendra T.A</a></li>
+                </ul>
+            </section>
+
+        </div>
+
+        <!-- Scripts -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/jquery.scrollzer.min.js"></script>
+        <script src="assets/js/jquery.scrolly.min.js"></script>
+        <script src="assets/js/skel.min.js"></script>
+        <script src="assets/js/util.js"></script>
+        <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+        <script src="assets/js/main.js"></script>
+        <script src="assetsMain/js/jquery.cookie.min.js"></script>
+        <script src="assetsMain/js/config.js"></script>
+        <script src="assetsMain/js/socket.io.min.js"></script>
+        <script src="api/profile.js"></script>
+        <script src="api/share.js"></script>
+        <script src="editorsrc/jquery.easyeditor.js"></script>
+        <script>
+            jQuery(document).ready(function ($) {
+                var easyEditor = new EasyEditor('#editor', {
+                    buttons: ['bold', 'italic', 'link', 'h2', 'h3', 'h4', 'alignleft', 'aligncenter', 'alignright', 'quote', 'code', 'list', 'x']
+                });
+
+                $loader = $('.easyeditor-modal-content-body-loader');
+
+                // sticky toolbar
+                var $cache = $('.easyeditor-toolbar');
+                var width = $cache.width();
+                var vTop = $cache.offset().top - parseFloat($cache.css('marginTop').replace(/auto/, 0));
+                
+
+            });
+        </script>
+
+</body>
+
+</html>

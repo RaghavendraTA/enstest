@@ -1,77 +1,33 @@
 var config = require('../../config');
-var edc = require('../middleware/edc');
+var Users = require('../models/user');
 
 module.exports = function(app, express, io) {
 
     //express router to handle API's
     var api = express.Router();
 
-    //Login router, post the json here
-    api.post('/login', function(req, res) {
-
+    api.get('/:userId', function(req, res) {
         try {
 
-            //Compare the user input password and the database encrypted password
-            edc.comparePassword("1234", "$2a$08$2v6IMTO9pQHBuXPXWS2wqeiAPigXS7sJ5GFjZCU/HjOisOsBmKgvO");
+            Users.findOne({
+                username: req.body.username
+            }, function(err, u) {
 
-            //Create Input json for token generation
-            var input = {
-                userId: "1234",
-                name: "raghu"
-            };
-            //Calling the function to generate encrypted token
-            var token = edc.generateToken(input);
-
-            //Sending the response back
-            res.json({
-                "success": true,
-                "token": token
+                if (err || u == undefined || u == null) throw "Failed to retrive data";
+                else
+                    res.json({
+                        "success": true,
+                        message: "Successful login",
+                        user: u
+                    });
             });
+
         } catch (ex) {
             res.json({
                 "success": false,
                 "message": "Failed to Authenticate: " + ex.toString()
             });
         }
-    });
-
-    //Signup code can be written Here
-    api.post('/signup', function(req, res) {
-        res.end("Signup code can be implemented here");
-    });
-
-    //Validate the given token
-    api.use('/validate', function(req, res, next) {
-
-        var token = req.body.token;
-
-        //Creating input json for varification
-        var input = {
-            userId: req.body.userId,
-            name: req.body.name
-        };
-
-        //Comparing the token synchronously
-        edc.compareToken(input, token, res, next, true);
-    });
-
-    //Authentication check
-    api.use('/:userId', function(req, res, next) {
-
-        var token = req.headers['x-access-token'] || req.headers['form-data'] || req.headers.token;
-
-        //Creating input json for varification
-        var input = {
-            userId: req.params.userId,
-            name: "raghu"
-        };
-
-        //Comparing the token synchronously
-        edc.compareToken(input, token, res, next);
-    });
-
-    api.post('/:userId', function(req, res) {
-        res.end("Working well");
     });
 
     /*

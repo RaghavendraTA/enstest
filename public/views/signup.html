@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+    <title>Login - ENS</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--[if lte IE 8]><script src="assetsMain/js/ie/html5shiv.js"></script><![endif]-->
+    <link rel="stylesheet" href="assetsMain/css/main.css" />
+    <link rel="stylesheet" href="assetsMain/css/login.css" />
+</head>
+
+<body>
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Header -->
+        <header id="header">
+            <span class="logo"><img src="images/logo.png" alt="" /></span>
+        </header>
+
+        <!-- Main -->
+        <div id="main">
+
+            <!-- Content -->
+            <section id="content" class="main">
+                <div id="killAbove">
+                    <center>
+                        <br>
+                        <br>
+                        <h1>Signup</h1>
+                        <form id="loginForm" action="#" onsubmit="return false;">
+                            <input type="text" placeholder="User name" id="uname" />
+                            <input type="password" placeholder="Password" id="pwd" />
+                            <input type="password" placeholder="Confirm Password" id="cpwd" />
+                            <input type="text" placeholder="Mobile Number" id="mobile_num" max="10" />
+                            <input type="email" placeholder="Email ID" id="email_id" /> Date of Birth:
+                            <input type="date" placeholder="Birth Year" id="dob" />
+                            <img src="images/cm_profile.png" style="width:300px; height:auto" id="dp" />
+                            <input type="file" id="profile_pic" onselect="imageSelected()" />
+
+                            <br/>
+                            <span class="icon myicon style1 fa-pencil" id="myButton" style="color: green"></span>
+                        </form>
+                    </center>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- Footer -->
+        <footer id="footer" style="padding:0">
+            <p class="copyright">&copy; BMSIT. Design: <a href="http://raghavendrata.tk">Raghavendra T.A</a>.</p>
+        </footer>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assetsMain/js/jquery.min.js"></script>
+    <script src="assetsMain/js/jquery.scrollex.min.js"></script>
+    <script src="assetsMain/js/jquery.scrolly.min.js"></script>
+    <script src="assetsMain/js/skel.min.js"></script>
+    <script src="assetsMain/js/util.js"></script>
+    <!--[if lte IE 8]><script src="assetsMain/js/ie/respond.min.js"></script><![endif]-->
+    <script src="assetsMain/js/jquery.cookie.min.js"></script>
+    <script src="assetsMain/js/main.js"></script>
+
+    <!-- My Scripts -->
+    <script src="api/form.js"></script>
+    <script src="api/config.js"></script>
+    <script src="assetsMain/js/socket.io.min.js"></script>
+    <script src="assetsMain/js/socket.io-stream.js"></script>
+    <script src="api/signup.js"></script>
+
+</body>
+
+</html>

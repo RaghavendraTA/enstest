@@ -1,0 +1,42 @@
+#loginForm {
+    width: 300px;
+}
+
+#loginForm input {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#loginForm a:hover {
+    color: blue;
+}
+
+#loginForm button {
+    width: 100px;
+    font-size: 18px;
+    margin: 0;
+    margin-top: 20px;
+}
+
+#killAbove {
+    margin-top: -70px;
+    margin-bottom: -20px;
+}
+
+.myicon {
+    border: solid 1px;
+    display: inline-block;
+    border-radius: 100%;
+    padding: 0.65em;
+    margin: 0 0 2em 0;
+    cursor: default;
+    font-size: 32px;
+    margin-bottom: 0;
+    cursor: pointer;
+    width: 95px;
+    margin-top: 20px;
+}
+
+#myButton:hover {
+    color: blue;
+}
