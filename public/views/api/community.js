@@ -71,7 +71,7 @@ function createArticle(_id, h4, imgPath, ansCount) {
 
     var img = document.createElement("IMG");
     img.src = imgPath;
-    img.style.height = "100%";
+    //img.style.height = "100%";
 
     var A = document.createElement("A");
     A.className = "image";
