@@ -2415,8 +2415,9 @@
 
 	.features article {
 		border-top: solid 3px #f4f4f4;
-		margin-bottom: 2.25em;
-		padding-top: 2.25em;
+		/*margin-bottom: 2.25em;*/
+		padding-top: 1em;
+        padding-bottom: 1em;
         cursor: pointer;
 	}
 

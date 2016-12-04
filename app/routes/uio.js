@@ -47,7 +47,8 @@ module.exports = function (io) {
                         socket.emit('login', {
                             "success": true,
                             message: "Successful login",
-                            user_id: u._id
+                            user_id: u._id,
+                            username: u.username
                         });
                 }
             });
@@ -195,8 +196,8 @@ module.exports = function (io) {
                 }
             });
         });
-        
-        socket.on("getQuestions", function(){
+
+        socket.on("getQuestions", function () {
             Questions.find({}).sort({
                 date_added: -1
             }).exec(function (err, allQ) {
@@ -207,6 +208,25 @@ module.exports = function (io) {
                         allQ: allQ
                     });
                 }
+            });
+        });
+
+        socket.on("StoreAns", function (data) {
+            Questions.findById(data.qid, function (err, q) {
+                var a = {
+                    username: data.username,
+                    content: data.content
+                };
+                q.ans.push(a);
+                q.save(function (err) {
+                    if (err) exception(socket, 'StoreAns', "Failed to store data: " + err.toString());
+                    else {
+                        socket.emit("StoreAns", {
+                            success: true,
+                            message: "Successfully answered"
+                        });
+                    }
+                });
             });
         });
 

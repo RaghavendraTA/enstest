@@ -7,7 +7,7 @@ var QuestionsSchema = new Schema({
     user_id: String,
     headerImage : String,
     que: String,
-    ans: [String],
+    ans: [{username: String, content: String}],
     date_added: Date
 
 },{ collection:'Questions' });

@@ -35,6 +35,7 @@ $(function () {
     socket.on('login', function (data) {
         //store data to cookie
         $.cookie("user", data.user_id);
+        $.cookie("username", data.username);
         alert(data.message);
         if (data.success) window.location = './home.html';
     });
