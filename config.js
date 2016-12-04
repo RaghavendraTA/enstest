@@ -1,5 +1,3 @@
-//Test
-
 var data = {
     //"domain": "http://127.0.0.1:8080",
     "domain": "https://enstest.herokuapp.com:8080",
